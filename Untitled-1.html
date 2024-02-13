@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libreta del 14 de febrero</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url('niña.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.notebook {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(244, 244, 244, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+  color: #000000;
+}
+
+.active-page {
+  display: block;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+  </style>
+</head>
+<body>
+
+<div class="notebook">
+  <div id="page1" class="page active-page">
+    <h2>Notita #1</h2>
+    <p>Feliz 13 de febrero mi amor precioso ❤️🥰</p>
+    <button onclick="nextPage()">Siguiente</button>
+  </div>
+
+  <div id="page2" class="page">
+    <h2>Notita #2</h2>
+    <p>Eres especial para mí, ya que un día como hoy tú mi niña te acercaste a mí y me dijiste que estabas enamorada de mí ❤️🤧 y sin duda es lo mejor que me pudo pasar ya que te amo tanto mi reina hermosa 😍🥰❤️</p>
+    <button onclick="prevPage()">Anterior</button>
+    <button onclick="nextPage()">Siguiente</button>
+  </div>
+
+  <div id="page3" class="page">
+    <h2>Notita #3</h2>
+    <p>Ya que llegaste hasta acá dejame decirte un poema mi amor❤️:</p>
+    <p>En la penumbra de la timidez, un susurro se elevó,<br>
+      Un secreto guardado, un amor que explotó.<br>
+      Tus palabras, tímidas como una suave brisa,<br>
+      Revelaron un sentimiento que mi corazón avisa.</p>
+      <p>En tus ojos, la vergüenza bailaba con la verdad,<br>
+      Y en ese instante, mi mundo dejó de girar en paz.<br>
+      "Estoy enamorada de ti", como un susurro suave,<br>
+      Un eco eterno en mi corazón, un regalo que no cabe.</p>
+      <p>Te amo tanto reina de mi corazón 🥰❤️😍💕</p>
+    <button onclick="prevPage()">Anterior</button>
+    <button onclick="nextPage()">Siguiente</button>
+  </div>
+
+  <div id="page4" class="page">
+    <h2>Notita #4</h2>
+    <p>Gracias por estar a mi lado a pesar de como soy contigo 🤧❤️🤧</p>
+    <p>Gracias de verdad por ser tan linda conmigo a pesar de todo 🤧❤️💕🥰</p>
+    <button onclick="prevPage()">Anterior</button>
+</div>
+</div>
+
+<script>
+  let currentPage = 1;
+
+  function nextPage() {
+    if (currentPage < 4) {
+      document.getElementById(`page${currentPage}`).classList.remove('active-page');
+      currentPage++;
+      document.getElementById(`page${currentPage}`).classList.add('active-page');
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      document.getElementById(`page${currentPage}`).classList.remove('active-page');
+      currentPage--;
+      document.getElementById(`page${currentPage}`).classList.add('active-page');
+    }
+  }
+</script>
+
+</body>
+</html>
